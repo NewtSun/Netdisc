@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  Netdisc:
+    image: Netdisc
+    build: .
+    ports:
+      - 3000
