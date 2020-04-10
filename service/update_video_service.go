@@ -12,9 +12,9 @@ type UpdateVideoService struct {
 }
 
 // Update 创建视频
-func (service *UpdateVideoService) Update(id string) serializer.Response {
+func (service *UpdateVideoService) Update(fileSha1 string) serializer.Response {
 	var video model.Video
-	err := model.DB.First(&video, id).Error
+	err := model.DB.First(&video, fileSha1).Error
 	if err != nil {
 		return serializer.Response{
 			Code:  404,

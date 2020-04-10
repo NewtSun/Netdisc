@@ -16,7 +16,7 @@ type UploadFileService struct {
 	UploadAt string
 }
 
-// Create 创建视频
+// Create 创建文件元信息
 func (service *UploadFileService) Create() serializer.Response {
 	File := model.FileMeta{
 		FileSha1: service.FileSha1,

@@ -21,17 +21,18 @@ func BuildFileMeta(item model.FileMeta) FileMeta {
 	return FileMeta{
 		ID:       item.ID,
 		FileSha1: item.FileSha1,
+		FileName: item.FileName,
 		FileSize: item.FileSize,
 		Location: item.Location,
 		UploadAt: item.UploadAt,
 	}
 }
 
-// BuildVideos 序列化视频列表
-// func BuildVideos(items []model.Video) (videos []Video) {
-// 	for _, item := range items {
-// 		video := BuildVideo(item)
-// 		videos = append(videos, video)
-// 	}
-// 	return videos
-// }
+// BuildFileMetas 序列化视频列表
+func BuildFileMetas(items []model.FileMeta) (filemetas []FileMeta) {
+	for _, item := range items {
+		filemeta := BuildFileMeta(item)
+		filemetas = append(filemetas, filemeta)
+	}
+	return filemetas
+}

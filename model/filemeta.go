@@ -2,8 +2,8 @@ package model
 
 import "github.com/jinzhu/gorm"
 
-// Filemeta 视频模型
-type Filemeta struct {
+// FileMeta 视频模型
+type FileMeta struct {
 	gorm.Model
 	FileSha1 string
 	FileName string

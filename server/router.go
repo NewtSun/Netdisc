@@ -62,13 +62,14 @@ func NewRouter() *gin.Engine {
 			auth.DELETE("user/logout", api.UserLogout)
 		}
 
+		f1.GET("file/upload", api.ReHf)
 		f1.POST("file/upload", api.UploadFile)
 		// f1.GET("file/upload/suc", api.UploadSucFile)
-		// f1.GET("file/meta", api.GetFileMeta)
-		// f1.GET("file/query/:id", api.QueryFile)
-		// f1.GET("file/download/:id", api.DownloadFile)
-		// f1.PUT("file/update/:id", api.UpdateFileMeta)
-		// f1.DELETE("file/delete/:id", api.DeleteFile)
+		f1.GET("file/meta/:fileSha1", api.GetFileMeta)
+		f1.GET("file/query", api.QueryFile)
+		f1.GET("file/download/:fileSha1", api.DownloadFile)
+		f1.PUT("file/update/:fileSha1", api.UpdateFileMeta)
+		f1.DELETE("file/delete/:fileSha1", api.DeleteFile)
 	}
 	return r
 }
