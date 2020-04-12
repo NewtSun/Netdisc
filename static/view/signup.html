@@ -82,10 +82,10 @@
     var username = document.getElementById('username');
     var password = document.getElementById('password');
     $.ajax({
-      url: "/user/signup",
+      url: "/api/f1/user/register",
       type: "POST",
       data: {
-        "username": username.value,
+        "user_name": username.value,
         "password": password.value
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -96,7 +96,7 @@
         }
       },
       success: function (data, textStatus, jqXHR) {
-        if (data == 'SUCCESS') {
+        if (data.status == 'active') {
           // 成功后跳到登录页
           document.getElementById("login_hint").style.display = "block";
           setTimeout(() => {

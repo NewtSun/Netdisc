@@ -10,7 +10,12 @@ type User struct {
 	gorm.Model
 	UserName       string
 	PasswordDigest string
+	Email          string
+	Phone          string
+	EmailValidated int
+	PhoneValidated int
 	Nickname       string
+	Profile        string
 	Status         string
 	Avatar         string `gorm:"size:1000"`
 }

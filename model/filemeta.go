@@ -2,7 +2,7 @@ package model
 
 import "github.com/jinzhu/gorm"
 
-// FileMeta 视频模型
+// FileMeta 文件元信息模型
 type FileMeta struct {
 	gorm.Model
 	FileSha1 string

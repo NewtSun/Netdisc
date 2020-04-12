@@ -9,7 +9,7 @@ import (
 type DeleteVideoService struct {
 }
 
-// Show 删除视频
+// Delete 删除视频
 func (service *DeleteVideoService) Delete(id string) serializer.Response {
 	var video model.Video
 	err := model.DB.First(&video, id).Error
